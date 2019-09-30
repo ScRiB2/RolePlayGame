@@ -9,9 +9,10 @@
 
 using namespace std;
 
-enum WeaponTypes {TYPE_PISTOL, TYPE_RIFLE};
+enum WeaponTypes {TYPE_PISTOL, TYPE_RIFLE, TYPE_SHOTGUN};
 
 const WeaponTypes PISTOL = TYPE_PISTOL;
 const WeaponTypes RIFLE = TYPE_RIFLE;
+const WeaponTypes SHOTGUN = TYPE_SHOTGUN;
 
 #endif //RPG_WEAPONTYPES_H

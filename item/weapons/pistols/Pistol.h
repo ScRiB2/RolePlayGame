@@ -6,13 +6,19 @@
 #define RPG_PISTOL_H
 
 
+#include <utility>
+
 #include "../Weapon.h"
 #include "../WeaponTypes.h"
 
 class Pistol : public Weapon {
 public:
-    Pistol(string name, int damage, int cost, int accuracy) : Weapon(name, damage, cost, accuracy, PISTOL) {
+    Pistol(string name, int damage, int cost, int accuracy) : Weapon(std::move(name), damage, cost, accuracy, PISTOL) {
 
+    }
+
+    void setAim() override {
+        setAccuracy(getAccuracy() + (int) (0.1 * getAccuracy()));
     }
 };
 

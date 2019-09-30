@@ -18,12 +18,12 @@ protected:
     int cost;
 
     Item(string name, int cost) {
-        this->name = name;
+        this->name = std::move(name);
         this->cost = cost;
     }
 
 public:
-    void setName(string name) { this->name = name; }
+    void setName(string newName) { this->name = std::move(newName); }
 
     string getName() { return name; }
 
