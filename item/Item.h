@@ -22,6 +22,11 @@ protected:
         this->cost = cost;
     }
 
+    Item(){
+        this->name = "";
+        this->cost = 0;
+    }
+
 public:
     void setName(string newName) { this->name = std::move(newName); }
 

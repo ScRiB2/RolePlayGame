@@ -13,7 +13,7 @@
 
 class Pistol : public Weapon {
 public:
-    Pistol(string name, int damage, int cost, int accuracy) : Weapon(std::move(name), damage, cost, accuracy, PISTOL) {
+    Pistol(string name, int damage, int cost, int accuracy, int capacity) : Weapon(std::move(name), damage, cost, accuracy, capacity, PISTOL) {
 
     }
 

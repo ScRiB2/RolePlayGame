@@ -13,8 +13,8 @@
 class Shotgun : public Weapon {
 public:
 
-    Shotgun(string name, int damage, int cost, int accuracy) : Weapon(std::move(name), damage, cost, accuracy,
-                                                                      SHOTGUN) {}
+    Shotgun(string name, int damage, int cost, int accuracy, int capacity) : Weapon(std::move(name), damage, cost,
+                                                                                    accuracy, capacity, SHOTGUN) {}
 
     void setAim() override;
 };

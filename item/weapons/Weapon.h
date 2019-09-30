@@ -15,10 +15,14 @@
 class Weapon : public Item, public IAim {
     WeaponTypes type;
     int damage;
-    int accuracy;
+    int capacity;   // ёмкость магазина
+    int accuracy;   // точность
+    int amount;     // текущее количество патронов в магазине
 
 protected:
-    Weapon(string name, int damage, int cost, int accuracy, WeaponTypes type);
+    Weapon(string name, int damage, int cost, int accuracy,int capacity, WeaponTypes type);
+
+    Weapon() {}
 
 public:
     void setDamage(int newDamage);
@@ -29,7 +33,19 @@ public:
 
     int getAccuracy();
 
+    void setAim() override;
+
     WeaponTypes getType();
+
+    int getCapacity();
+
+    void setCapacity(int capacity);
+
+    int getAmount();
+
+    void setAmount(int amount);
+
+
 };
 
 
