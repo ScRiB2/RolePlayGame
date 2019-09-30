@@ -3,3 +3,7 @@
 //
 
 #include "Pistol.h"
+
+void Pistol::setAim() {
+    setAccuracy(getAccuracy() + (int) (0.1 * getAccuracy()));
+}

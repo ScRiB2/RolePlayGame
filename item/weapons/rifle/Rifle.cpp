@@ -3,3 +3,7 @@
 //
 
 #include "Rifle.h"
+
+void Rifle::setAim() {
+    setAccuracy(getAccuracy() + (int) (0.2 * getAccuracy()));
+}

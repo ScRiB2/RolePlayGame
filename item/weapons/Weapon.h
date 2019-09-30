@@ -18,32 +18,18 @@ class Weapon : public Item, public IAim {
     int accuracy;
 
 protected:
-    Weapon(string name, int damage, int cost, int accuracy, WeaponTypes type) : Item(std::move(name), cost) {
-        this->damage = damage;
-        this->accuracy = accuracy;
-        this->type = type;
-    }
+    Weapon(string name, int damage, int cost, int accuracy, WeaponTypes type);
 
 public:
-    void setDamage(int newDamage) {
-        this->damage = newDamage;
-    }
+    void setDamage(int newDamage);
 
-    int getDamage() {
-        return damage;
-    }
+    int getDamage();
 
-    void setAccuracy(int newAccuracy) {
-        this->accuracy = newAccuracy;
-    }
+    void setAccuracy(int newAccuracy);
 
-    int getAccuracy() {
-        return accuracy;
-    }
+    int getAccuracy();
 
-    WeaponTypes getType() {
-        return type;
-    }
+    WeaponTypes getType();
 };
 
 

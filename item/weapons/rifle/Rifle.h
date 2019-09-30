@@ -16,9 +16,7 @@ public:
 
     }
 
-    void setAim() override {
-        setAccuracy(getAccuracy() + (int) (0.2 * getAccuracy()));
-    }
+    void setAim() override;
 };
 
 

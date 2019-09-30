@@ -14,13 +14,9 @@ class Shotgun : public Weapon {
 public:
 
     Shotgun(string name, int damage, int cost, int accuracy) : Weapon(std::move(name), damage, cost, accuracy,
-                                                                      SHOTGUN) {
+                                                                      SHOTGUN) {}
 
-    }
-
-    void setAim() override {
-        setAccuracy(getAccuracy() + (int) (0.05 * getAccuracy()));
-    }
+    void setAim() override;
 };
 
 
