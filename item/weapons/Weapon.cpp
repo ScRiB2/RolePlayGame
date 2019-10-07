@@ -4,12 +4,11 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(string name, int damage, int cost, int accuracy, int capacity, WeaponTypes type) : Item(std::move(name), cost) {
+Weapon::Weapon(string name, int damage, int cost, int accuracy, int capacity, WeaponTypes::WeaponTypes type) : Item(std::move(name), cost) {
     this->damage = damage;
     this->accuracy = accuracy;
     this->type = type;
     this->amount = this->capacity = capacity;
-
 }
 
 void Weapon::setDamage(int newDamage) {
@@ -28,11 +27,7 @@ int Weapon::getAccuracy() {
     return accuracy;
 }
 
-void Weapon::setAim() {
-
-}
-
-WeaponTypes Weapon::getType() {
+WeaponTypes::WeaponTypes Weapon::getType() {
     return type;
 }
 
@@ -50,4 +45,8 @@ int Weapon::getAmount() {
 
 void Weapon::setAmount(int amount) {
     Weapon::amount = amount;
+}
+
+void Weapon::setAim() {
+
 }

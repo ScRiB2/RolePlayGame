@@ -6,43 +6,64 @@
 #define RPG_PLAYER_H
 
 #include <string>
+#include <iostream>
+#include <random>
 #include <utility>
 #include "../item/weapons/Weapon.h"
+#include "../item/weapons/pistols/Pistol.h"
+#include "../item/upgrades/Upgrades.h"
 
 using namespace std;
 
 
 class Player {
 private:
-    const string name;
-    int hp;
+    string name;
+    int hp = 100;
     int killed = 0;
-    int damage;
+    int damage = 0;
     bool armor = false;
-    Weapon weapon;
+    Weapon *weapon;
+    int money = 1000;
 
 public:
-    const string &getName() const;
+    Player(const string& name);
 
-    int getHp() const;
+    [[nodiscard]] string getName() const;
+
+    [[nodiscard]] int getHp() const;
 
     void setHp(int hp);
 
-    int getKilled() const;
+    [[nodiscard]] int getKilled() const;
 
     void setKilled(int killed);
 
-    int getDamage() const;
+    [[nodiscard]] int getDamage() const;
 
     void setDamage(int damage);
 
-    bool isArmor() const;
+    [[nodiscard]] bool isArmor() const;
 
     void setArmor(bool armor);
 
-    const Weapon &getWeapon() const;
+    [[nodiscard]] Weapon *getWeapon() const;
 
-    void setWeapon(const Weapon &weapon);
+    void setWeapon(Weapon *weapon);
+
+    bool isDie();
+
+    void respawn();
+
+    void attack(Player* other);
+
+    void action(Player* other);
+
+    Player buyWeapon(Weapon weapon);
+
+    void upgradeWeapon(Upgrades upgrade);
+
+    void buyArmor();
 };
 
 

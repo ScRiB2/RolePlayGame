@@ -8,11 +8,15 @@
 #include <string>
 
 using namespace std;
+namespace WeaponTypes {
 
-enum WeaponTypes {TYPE_PISTOL, TYPE_RIFLE, TYPE_SHOTGUN};
+    enum WeaponTypes {
+        Pistol, Rifle, Shotgun
+    };
 
-const WeaponTypes PISTOL = TYPE_PISTOL;
-const WeaponTypes RIFLE = TYPE_RIFLE;
-const WeaponTypes SHOTGUN = TYPE_SHOTGUN;
+    const WeaponTypes PISTOL = Pistol;
+    const WeaponTypes RIFLE = Rifle;
+    const WeaponTypes SHOTGUN = Shotgun;
+}
 
 #endif //RPG_WEAPONTYPES_H

@@ -11,18 +11,19 @@
 #include "WeaponTypes.h"
 #include "../Item.h"
 #include "../upgrades/IAim.h"
+#include "pistols/Pistol.h"
 
 class Weapon : public Item, public IAim {
-    WeaponTypes type;
+    WeaponTypes::WeaponTypes type;
     int damage;
     int capacity;   // ёмкость магазина
     int accuracy;   // точность
     int amount;     // текущее количество патронов в магазине
 
 protected:
-    Weapon(string name, int damage, int cost, int accuracy,int capacity, WeaponTypes type);
+    Weapon(string name, int damage, int cost, int accuracy, int capacity, WeaponTypes::WeaponTypes type);
 
-    Weapon() {}
+    Weapon() = default;
 
 public:
     void setDamage(int newDamage);
@@ -33,9 +34,7 @@ public:
 
     int getAccuracy();
 
-    void setAim() override;
-
-    WeaponTypes getType();
+    WeaponTypes::WeaponTypes getType();
 
     int getCapacity();
 
@@ -45,8 +44,9 @@ public:
 
     void setAmount(int amount);
 
+    void setAim() override;
 
+    bool isEmpty() { return (this->amount == 0); };
 };
-
 
 #endif //RPG_WEAPON_H
