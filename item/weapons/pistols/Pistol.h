@@ -16,7 +16,7 @@ public:
 
         }
 
-//        Pistol() : Weapon("Glock", 100, 1000, 99, 20, WeaponTypes::Pistol) {}
+        Pistol() : Weapon("Glock", 20, 1000, 40, 20, WeaponTypes::Pistol) {}
 
         void setAim() override;
 };

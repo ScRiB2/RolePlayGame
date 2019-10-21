@@ -7,6 +7,7 @@
 #include <utility>
 #include "../item/weapons/pistols/Pistol.h"
 #include "../item/weapons/rifle/Rifle.h"
+#include <random>
 
 string Player::getName() const {
     return name;
@@ -63,10 +64,10 @@ bool Player::isDie() {
 
 void Player::respawn() {
     hp = 100;
-    weapon = new Rifle("AK-47", 36, 2700, 30, 40); //2700;
+    weapon = new Pistol();
     damage = weapon->getDamage();
     money = 1000;
-    std::cout << this->getName() << " возродился " << std::endl;
+    std::cout << this->getName() << " заспавнился" << std::endl;
 }
 
 void Player::attack(Player *other) {
@@ -81,7 +82,9 @@ void Player::attack(Player *other) {
     // попадание с вероятностью = точность оружия
     std::random_device rd;
     std::uniform_int_distribution<int> uid(0, 100);
-    if (uid(rd) < weapon->getAccuracy())
+    int t = weapon->getAccuracy();
+    int random = rand() % 100;
+    if (random < weapon->getAccuracy())
         hit = true;
     if (hit) {
         int resist = other->isArmor() ? 1 : 0;
@@ -106,18 +109,6 @@ void Player::attack(Player *other) {
 void Player::action(Player *other)  {
     if (other->isDie() || this->isDie())
         return;
-    int actionIndex = 0;
-    std::cout << "Выберите действие: " << endl;
-    std::cout << "1. Атаковать противника" << endl;
-    std::cout << "2. Купить новое оружие" << endl;
-    std::cout << "3. Атаковать противника" << endl;
-    std::cin >> actionIndex;
-
-
-    switch (actionIndex){
-
-    }
-
     this->attack(other);
     // с вероятностью 30% противник контратакует
     std::random_device rd;

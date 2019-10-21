@@ -16,9 +16,7 @@ int main() {
     Player two = Player("Вася");
 
     Rifle AK = Rifle("AK-47", 36, 2700, 30, 40); //2700
-    Shotgun SWAG = Shotgun("SWAG-7", 50, 1800, 5, 30);  //1800
-
-//        list<Weapon> weapons = {Glock, AK, SWAG};
+    Shotgun SWAG = Shotgun("SWAG-7", 50, 1800, 10, 30);  //1800
 
     one.buyWeapon(SWAG).upgradeWeapon(AIM);
     one.buyArmor();

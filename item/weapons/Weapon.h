@@ -11,7 +11,6 @@
 #include "WeaponTypes.h"
 #include "../Item.h"
 #include "../upgrades/IAim.h"
-#include "pistols/Pistol.h"
 
 class Weapon : public Item, public IAim {
     WeaponTypes::WeaponTypes type;
