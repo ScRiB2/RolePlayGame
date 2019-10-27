@@ -12,9 +12,9 @@ using namespace std;
 int main() {
     system("chcp 65001");
 
-
     Game game;
-    game.start();
+    game.start("Петя", "Вася", false);
+    game.start("Петя", "Бот", true);
 
     return 0;
 }

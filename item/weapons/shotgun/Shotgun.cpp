@@ -11,4 +11,5 @@ Shotgun::Shotgun(string name, int damage, int cost, int accuracy, int capacity) 
 
 void Shotgun::setAim() {
     setAccuracy(getAccuracy() + (int) (0.05 * getAccuracy()));
+    std::cout << "Прицел установлен" << endl;
 }

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <random>
 #include <utility>
+#include <list>
 #include "../item/weapons/Weapon.h"
 #include "../item/weapons/pistols/Pistol.h"
 #include "../item/upgrades/Upgrades.h"
@@ -25,9 +26,10 @@ private:
     bool armor = false;
     Weapon *weapon;
     int money = 1000;
+    bool isBot;
 
 public:
-    Player(const string& name);
+    Player(const string& name, bool isBot);
 
     [[nodiscard]] string getName() const;
 
@@ -49,7 +51,7 @@ public:
 
     [[nodiscard]] Weapon *getWeapon() const;
 
-    void setWeapon(Weapon *weapon);
+    void setWeapon(Weapon * weapon);
 
     bool isDie();
 
@@ -57,13 +59,16 @@ public:
 
     void attack(Player* other);
 
-    void action(Player* other);
+    void action(Player* other, vector<Weapon> weapons);
 
-    Player buyWeapon(Weapon weapon);
+    Player buyWeapon(Weapon* weapon);
 
     void upgradeWeapon(Upgrades upgrade);
 
     void buyArmor();
+
+    [[nodiscard]] int getMoney() const;
+
 };
 
 
